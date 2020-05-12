@@ -1,0 +1,73 @@
+	read
+	store   [2]
+
+	neg
+	add     1     
+	jgtz    end     
+	add     1     
+	jgtz    single
+
+	load    5
+	store   [4]
+
+	add     [2]
+	store   [1]
+
+get:    read
+	store   [[4]]
+	load    [4]
+	add     1
+	store   [4]    
+	neg
+	add     [1]
+	jgtz    get
+
+pass:   load    0
+	store   [3]     
+	load    5
+	store   [4]     
+
+loop:   load    [[4]]
+	neg
+	store   [1]     
+	load    [4]
+	add     1
+	load    [[0]]
+	add     [1]     
+	jgtz    next   
+
+	load    [[4]]
+	store   [1]     
+	load    [4]
+	add     1
+	store   [3]     
+	load    [[3]]
+	store   [[4]]   
+	load    [1]
+	store   [[3]]   
+
+next:   load    [4]
+	add     1
+	store   [4]     
+	add     -4     
+	neg
+	store   [1]     
+	load    [2]
+	add     [1]     
+	jgtz    loop    
+	load    [3]
+	jgtz    pass    
+
+	load    5
+	store   [4]     
+	add     [2]
+	store   [1]
+output: load    [[4]]
+	write
+	load    [4]
+	add     1
+	store   [4]    
+	neg
+	add     [1]
+	jgtz    output
+	halt

@@ -1,0 +1,23 @@
+1       READ
+2       STORE   [1]  
+3       STORE   [5]     
+4       READ            
+5       STORE   [2]     
+6       HALF
+7       STORE   [3]     
+8       ADD     [3]
+9       NEG
+10      ADD     [2]     
+11      JGTZ    13      
+12      JUMP    16
+13      LOAD    [4]    
+14      ADD     [5]
+15      STORE   [4]
+16      LOAD    [5]
+17      ADD     [5]
+18      STORE   [5]
+19      LOAD    [3]
+20      JGTZ    5
+21      LOAD    [4]
+22      WRITE
+23      HALT
